@@ -3,78 +3,77 @@ Developed by Cyan with ❤️
 
 [![License](https://img.shields.io/github/license/hoony6134/Elder-Guardian.svg)](https://github.com/hoony6134/Elder-Guardian) <a href='https://github.com/shivamkapasia0' target="_blank"><img alt='Arduino' src='https://img.shields.io/badge/Made_for Arduino-100000?style=flat&logo=Arduino&logoColor=white&labelColor=00979D&color=black'/></a> [![contributions - welcome](https://img.shields.io/badge/contributions-welcome-blue)](/CONTRIBUTING.md "Go to contributions doc") ![maintained - yes](https://img.shields.io/badge/maintained-yes-blue)<br>
 <a href='https://github.com/shivamkapasia0' target="_blank"><img alt='Arduino' src='https://img.shields.io/badge/Arduino_UNO-100000?style=flat&logo=Arduino&logoColor=white&labelColor=00979D&color=00979D'/></a> <a href='https://github.com/shivamkapasia0' target="_blank"><img alt='Arduino' src='https://img.shields.io/badge/WeMos_D1 R1-100000?style=flat&logo=Arduino&logoColor=white&labelColor=00979D&color=00979D'/></a> <a href='https://github.com/shivamkapasia0' target="_blank"><img alt='adafruit' src='https://img.shields.io/badge/Adafruit_Sensors-100000?style=flat&logo=adafruit&logoColor=white&labelColor=000000&color=000000'/></a>
-## What is "Elder-Guardian"?
-Elder Guardian is a project to protect elders from strangers' approaching and unexpected falling. This is based on two Arduino boards called "Server Side" and "Sensor Side". We use 1 Arduino UNO board and 1 WeMos R1 D1 Board for Wi-Fi Server.
-## Server Side
-### What is "Server Side"?
-Server Side is a board based on WeMos R1 D1 board that is connected to DHT11 (Moisture and Temperature Sensor), light sensor and built-in Wi-Fi Module. This board is connected to the Internet and sends data to client who is connected to the server. The default local IP address would be displayed on serial monitor once connected to laptop. Or, you can use nmap or other network scanner to find the IP address of the host.
-### How to make and use "Server Side"?
-1. Prepare following parts:
-    - WeMos R1 D1 Board
-    - DHT11 Sensor
-    - Resistor (Brown - Black - Red - Gold)
-    - Jumper Wires (Appx. 3 M-F, 3 M-M)
-    - Breadboard (Small - 15 holes * 2 or Tiny Breadboard)
-    - Light Sensor
-    - USB A - Micro 5Pin Data/Power Cable
-    - Laptop or Desktop Computer with Arduino IDE installed
-2. Make a circuit like this:  
+## "Elder Guardian"이란?
+Elder Guardian은 낯선 사람의 접근과 예기치 않은 낙상으로부터 어르신들을 보호하기 위한 프로젝트입니다. 본 프로젝트는 "서버 측"과 "센서 측"이라는 두 개의 아두이노 보드를 기반으로 하며, 센서용 아두이노 UNO 보드 1개와 Wi-Fi 서버용 WeMos R1 D1 보드 1개를 사용합니다.
+## 서버 장치
+### "서버 장치"란?
+서버 장치는 DHT11(습도 및 온도 센서), 조도 센서, 내장 Wi-Fi 모듈이 연결된 WeMos R1 D1 보드 기반의 보드입니다. 이 보드는 인터넷에 연결되어 서버에 연결된 클라이언트에 데이터를 전송합니다. 노트북/데스크탑에 연결하면 기본 로컬 IP 주소가 시리얼 모니터에 표시되며, nmap 또는 기타 네트워크 스캐너를 사용하여 호스트의 IP 주소를 찾을 수 있습니다.
+### "서버 장치" 제작 및 사용법
+1. 다음 부품을 준비합니다:
+    - WeMos R1 D1 보드
+    - DHT11 센서
+    - 저항(갈색 - 검정색 - 빨간색 - 금색)
+    - 점퍼선(M-F 약 3개, M-M 약 3개)
+    - 브레드보드(소형 - 15홀 * 2 또는 소형 브레드보드)
+    - 조도 센서
+    - USB A - 마이크로 5핀 데이터/전원 케이블
+    - 아두이노 IDE가 설치된 노트북 또는 데스크톱 컴퓨터
+2. 회로 구성:   
 ![Server Side Circuit](Server_side_bb.svg)
-3. Connect the board to the computer with USB cable.
-4. Download the code from [here](server.ino) and open it with Arduino IDE.
-5. Replace the SSID and Password with your Wi-Fi's SSID and Password (in line 11 and 12)
+3. 보드를 컴퓨터와 USB 케이블로 연결합니다.
+4. [이 곳](server.ino)에서 코드를 다운받고, 컴퓨터에서 아두이노 IDE로 실행합니다.
+5. SSID와 비밀번호를 사용중인 Wi-Fi의 SSID와 비밀번호(11번과 12번 줄)로 바꿉니다.
 ```cpp
 char *ssid = "SSID"; // SSID
-char *password = "PW"; // Password ("" for open network)
+char *password = "PW"; // Password (공개 네트워크: "")
 ```
-6. Upload the code to the board using Arduino IDE.
-7. Open Serial Monitor and wait for the board to connect to the Wi-Fi.
-8. Once connected, the local IP address would be displayed on the Serial Monitor.
-9. Now, you can use the IP address to connect to the board. After that, computer is not needed anymore.<br>
-**Note:** The code is designed to run automatically once the board is powered on, and designed to fit for iPhone 13 Screen. It uses Google Webfont to show the text, so you need to connect to the Internet to use the board. Also, it uses My GitHub-Hosted alert sound, so you need to connect to the Internet to use the alert sound for falling detection.
+6. Arduino IDE를 사용하여 코드를 보드에 업로드합니다.
+7. Serial Monitor(시리얼 모니터)를 열고 보드가 Wi-Fi에 연결될 때까지 기다립니다.
+8. 연결되면 Serial Monitor에 로컬 IP 주소가 표시됩니다.
+9. 이제 IP 주소를 사용하여 보드에 연결할 수 있습니다. 그 이후로, 컴퓨터는 더 이상 필요하지 않습니다.<br>
+**참고:** 코드는 보드의 전원을 켜면 자동으로 실행되도록 설계되었으며 아이폰 13 화면에 맞게 설계되었습니다. Google 웹 폰트를 사용하여 텍스트를 표시하므로 보드를 사용하려면 인터넷에 연결해야 합니다. 또한 제 GitHub에서 호스팅하고 있는 경고음 파일을 사용하므로 낙상 감지 시 경고음을 사용하려면 인터넷에 연결해야 합니다.
 
-## Sensor Side
-### What is "Sensor Side"?
-Sensor Side is a board based on Arduino UNO board that is connected to HY-SRF05(or HC-SR04) Ultra Sonic Sensor, Traffic Light LED, LiquidCrystal 16x2 LCD Panel, Piezo Buzzer, and Extra Red LED (Optional). It's not connected with Server side, but it provides a function to detect approaching of strangers and alert the elders.
+## 센서 장치
+### "센서 장치"란?
+센서 장치는 HY-SRF05(또는 HC-SR04) Ultra Sonic Sensor, Traffic Light LED, Liquid Crystal 16x2 LCD Panel, Piezo Buzer, 적색 LED(옵션)에 연결된 Arduino UNO 보드 기반의 보드입니다. 서버 측과는 연결되지 않지만, 낯선 사람이 접근하는 것을 감지하고 어르신들에게 알려주는 기능을 제공합니다.
 
-### How to make and use "Sensor Side"?
-1. Prepare following parts:
-    - Arduino UNO Board
-    - HY-SRF05(or HC-SR04) Ultra Sonic Sensor
-    - Traffic Light LED
-    - LiquidCrystal 16x2 LCD Panel with I2C Module
-    - Piezo Buzzer
-    - Extra Red LED (Optional)
-    - Resistor (Optional)
-    - Jumper Wires (Appx. 4 M-F, 15 M-M)
-    - Breadboard (1 Half Size, and 1 Tiny Size)
-    - Arduino UNO - USB A Data/Power Cable
-    - Laptop or Desktop Computer with Arduino IDE installed
-2. Make a circuit like this:
+### "센서 장치" 제작 및 사용법
+1. 다음 부품을 준비합니다:
+    - 아두이노 UNO 보드
+    - HY-SRF05(또는 HC-SR04) 초음파 센서
+    - 신호등 LED
+    - I2C 모듈이 있는 16x2 LCD 패널
+    - 피에조 부저
+    - 추가 적색 LED(옵션)
+    - 저항(옵션)
+    - 점퍼선(M-F 약 4개, M-M 약 15개)
+    - 브레드보드(하프사이즈 1개, Tiny 1개)
+    - Arduino UNO - USB A 데이터/전원 케이블
+    - Arduino IDE가 설치된 노트북 또는 데스크톱 컴퓨터
+2. 회로 구성:  
 ![Sensor Side Circuit](Sensor_side_bb.svg)
-3. Connect the board to the computer with USB cable.
-4. Download the code from [here](sensor.ino) and open it with Arduino IDE.
-5. Upload the code to the board using Arduino IDE.
-6. Now, you can use the board and enjoy approaching detection and alerting.
+3. USB 케이블로 보드를 컴퓨터에 연결합니다.
+4. [여기](sensor.ino)에서 코드를 다운로드하여 Arduino IDE로 엽니다.
+5. Arduino IDE를 사용하여 코드를 보드에 업로드합니다.
+6. 접근 감지 및 경고 기능을 사용할 준비가 완료되었습니다!
 
-## How to use "Server" from "Client"?
-1. Connect to the Wi-Fi that the Server is connected to (or use Mobile Hotspot).
-2. Open the IP address of the Server that you got from Serial Monitor or nmap from your browser (SmartPhone Screen is recommended - Designed to perfectly fit for iPhone 13, Safari, iOS 17 Dev Beta 2).
-3. Now, you can see the data from the Server and use the board.
+## "클라이언트"에서의 "서버" 사용법
+1. 스마트폰 등의 기기에서 서버가 연결되어 있는 Wi-Fi에 연결합니다(또는 개인용 핫스팟 사용).
+2. 웹브라우저에서 Serial Monitor 또는 nmap을 통해 얻은 서버의 IP 주소를 엽니다(스마트폰 화면 권장 - iPhone 13, Safari, iOS 17 Dev Beta 2에 완벽하게 적합하도록 설계됨).
+3. 이제 서버의 데이터를 보고 보드를 사용할 수 있습니다.
 
-## How to use "Sensor"?
-1. Connect the board to the power source (Power Bank is recommended).
-2. Wait for the board to boot up.
-3. Attach Ultra Sonic Sensor to the back of your backpack or bag, clothes, or anything that you want to attach.
-4. Attach Traffic LED Light and Extra Red LED, LCD to the front of your backpack or bag, clothes, or anything that you want to attach.
-5. Enclose the board with a case or something that can protect the board safe and sound.
-6. You can see the distance of stranger (or object) from the Ultra Sonic Sensor on the LCD Panel like this:  
+## "센서"를 사용하는 방법?
+1. 보드를 전원에 연결합니다(Power Bank 권장).
+2. 보드가 부팅될 때까지 기다립니다.
+3. 초음파 센서를 배낭이나 가방, 옷 등 부착하고자 하는 것의 뒷면에 부착합니다.
+4. 신호등 LED 및 (선택) 적색 LED, LCD를 배낭 또는 가방, 옷 등에 부착합니다.
+5. 보드를 안전한 장소에 보관합니다.
+6. LCD 패널의 Ultra Sonic Sensor에서 낯선 사람(또는 물체)의 거리를 다음과 같이 볼 수 있습니다:  
 ![LCD Panel](LCD.JPG)
-7. If the distance is less than 10cm, the board will alert you with the buzzer and the LED, and the LCD Panel will show the small exclamanation mark (!)
+7. 거리가 10cm 미만일 경우, 보드에 버저와 LED로 알림이 표시되고, LCD 패널에 작은 느낌표(!)가 표시됩니다
 
-## Any Questions?
-If you have any questions, please don't hesitate to contact me via [email][def]!  
-Or you can open an issue or discussion on this repository.  
-Pull requests are also welcome!
+## Q&A
+궁금한 점이 있으시면 언제든지 [이메일][def]로 연락주세요!  
+또는 이 리포지토리에 대한 이슈 또는 토론을 여셔도 되며, Pull Request도 자유롭게 남겨주세요!
 
-[def]: mailto:projects@scian.xyz
+[def]: mailto:mailto@scian.xyz
