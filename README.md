@@ -35,12 +35,12 @@ char *password = "PW"; // Password (공개 네트워크: "")
 
 ## 센서 장치
 ### "센서 장치"란?
-센서 장치는 HY-SRF05(또는 HC-SR04) Ultra Sonic Sensor, Traffic Light LED, Liquid Crystal 16x2 LCD Panel, Piezo Buzer, 적색 LED(옵션)에 연결된 Arduino UNO 보드 기반의 보드입니다. 서버 측과는 연결되지 않지만, 낯선 사람이 접근하는 것을 감지하고 어르신들에게 알려주는 기능을 제공합니다.
+센서 장치는 HY-SRF05(또는 HC-SR04) 초음파 센서, 신호등 LED, Liquid Crystal 16x2 LCD Panel, Piezo Buzer, 적색 LED(옵션)에 연결된 Arduino UNO 보드 기반의 보드입니다. 서버 측과는 연결되지 않지만, 낯선 사람이 접근하는 것을 감지하고 어르신들에게 알려주는 기능을 제공합니다.
 
 ### "센서 장치" 제작 및 사용법
 1. 다음 부품을 준비합니다:
     - 아두이노 UNO 보드
-    - HY-SRF05(또는 HC-SR04) 초음파 센서
+    - HY-SRF05(또는 HC-SR04) 초음파 센서
     - 신호등 LED
     - I2C 모듈이 있는 16x2 LCD 패널
     - 피에조 부저
