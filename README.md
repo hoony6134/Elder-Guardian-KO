@@ -3,6 +3,8 @@ Developed by Cyan with ❤️
 
 [![License](https://img.shields.io/github/license/hoony6134/Elder-Guardian.svg)](https://github.com/hoony6134/Elder-Guardian) <a href='https://github.com/shivamkapasia0' target="_blank"><img alt='Arduino' src='https://img.shields.io/badge/Made_for Arduino-100000?style=flat&logo=Arduino&logoColor=white&labelColor=00979D&color=black'/></a> [![contributions - welcome](https://img.shields.io/badge/contributions-welcome-blue)](/CONTRIBUTING.md "Go to contributions doc") ![maintained - yes](https://img.shields.io/badge/maintained-yes-blue)<br>
 <a href='https://github.com/shivamkapasia0' target="_blank"><img alt='Arduino' src='https://img.shields.io/badge/Arduino_UNO-100000?style=flat&logo=Arduino&logoColor=white&labelColor=00979D&color=00979D'/></a> <a href='https://github.com/shivamkapasia0' target="_blank"><img alt='Arduino' src='https://img.shields.io/badge/WeMos_D1 R1-100000?style=flat&logo=Arduino&logoColor=white&labelColor=00979D&color=00979D'/></a> <a href='https://github.com/shivamkapasia0' target="_blank"><img alt='adafruit' src='https://img.shields.io/badge/Adafruit_Sensors-100000?style=flat&logo=adafruit&logoColor=white&labelColor=000000&color=000000'/></a>
+* For English Version, please visit [here](https://github.com/hoony6134/Elder-Guardian)!
+
 ## "Elder Guardian"이란?
 Elder Guardian은 낯선 사람의 접근과 예기치 않은 낙상으로부터 어르신들을 보호하기 위한 프로젝트입니다. 본 프로젝트는 "서버 측"과 "센서 측"이라는 두 개의 아두이노 보드를 기반으로 하며, 센서용 아두이노 UNO 보드 1개와 Wi-Fi 서버용 WeMos R1 D1 보드 1개를 사용합니다.
 ## 서버 장치
